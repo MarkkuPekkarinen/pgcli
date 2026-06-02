@@ -18,6 +18,12 @@ Bug fixes:
 * Let `sqlparse` accept arbitrarily-large queries.
 * Respect user-specified `LIMIT` clauses when the limit value starts on a new line.
 
+Bug Fixes:
+----------
+* Fix trailing SQL comments preventing query submission and execution.
+    * ``SELECT 1; -- note`` now submits correctly in multiline mode
+    * ``rstrip(";")`` in ``pgexecute.py`` now handles comments after the semicolon
+
 4.4.0 (2025-12-24)
 ==================
 
